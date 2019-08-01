@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/data")
-public class ScratchyResource
+public class DataResource
 {
 
     @Autowired
-    private ScratchyRepository repository;
+    private DataRepository repository;
 
     @GetMapping("/{name}")
     public ResponseEntity<List<SensorData>> byName(@PathVariable String name)

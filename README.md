@@ -52,6 +52,12 @@ may return:
     }
 ]
 ```
+#### Search
+Search data with query parameters.
+
+```
+GET {apiUrl}/devices/{deviceId}/data?name=co2&pageSize=20&pageNumber=2
+```
 ### Device
 
 #### Create

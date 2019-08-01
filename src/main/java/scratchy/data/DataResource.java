@@ -13,12 +13,14 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import scratchy.device.Device;
@@ -35,6 +37,12 @@ public class DataResource
     private DeviceRepository deviceRepository;
     @Autowired
     private DataRepository   dataRepository;
+
+    @GetMapping
+    public ResponseEntity<List<SensorData>> search(@RequestParam MultiValueMap<String, String> queryParameters)
+    {
+        return new ResponseEntity<List<SensorData>>(dataRepository.search(queryParameters), HttpStatus.OK);
+    }
 
     @GetMapping("{dataName}")
     public ResponseEntity<List<SensorData>> byName(@PathVariable("deviceId") Long deviceId, @PathVariable("dataName") String dataName)

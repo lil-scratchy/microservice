@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "63edbce7-0b86-45f5-9bef-8103f9818a2a",
+		"name": "Scratchy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get data by name",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{apiUrl}}data/brightness",
+					"host": [
+						"{{apiUrl}}data"
+					],
+					"path": [
+						"brightness"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all devices",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Scratchy 1\",\n    \"location\": {\n        \"latitude\": 49.5,\n        \"longitude\": 30.6\n    }\n}"
+				},
+				"url": {
+					"raw": "{{apiUrl}}devices",
+					"host": [
+						"{{apiUrl}}devices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get device 1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Scratchy 1\",\n    \"location\": {\n        \"latitude\": 49.5,\n        \"longitude\": 30.6\n    }\n}"
+				},
+				"url": {
+					"raw": "{{apiUrl}}devices/1",
+					"host": [
+						"{{apiUrl}}devices"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create device",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Scratchy 1\",\n    \"location\": {\n        \"latitude\": 49.5,\n        \"longitude\": 30.6\n    }\n}"
+				},
+				"url": {
+					"raw": "{{apiUrl}}devices",
+					"host": [
+						"{{apiUrl}}devices"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "618c680d-1dbb-481d-90ca-5ad7f787144c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "5ea957d8-c188-40e1-bb1b-4eb26648696e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "cc3312e7-898c-439d-b336-7f7af75c7424",
+			"key": "apiUrl",
+			"value": "http://localhost:8080/",
+			"type": "string"
+		}
+	]
+}

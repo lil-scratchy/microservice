@@ -22,11 +22,13 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{apiUrl}}data/brightness",
+					"raw": "{{apiUrl}}devices/1/data/brightness",
 					"host": [
-						"{{apiUrl}}data"
+						"{{apiUrl}}devices"
 					],
 					"path": [
+						"1",
+						"data",
 						"brightness"
 					]
 				}
@@ -142,7 +144,7 @@
 	],
 	"variable": [
 		{
-			"id": "cc3312e7-898c-439d-b336-7f7af75c7424",
+			"id": "a3fbb91d-62f0-4f62-8697-8c5aa04c3114",
 			"key": "apiUrl",
 			"value": "http://localhost:8080/",
 			"type": "string"

@@ -8,5 +8,5 @@ public interface DataRepository
     extends CrudRepository<SensorData, Long>
 {
 
-    public List<SensorData> findByName(String name);
+    public List<SensorData> findByNameAndDevice_id(String name, Long id);
 }

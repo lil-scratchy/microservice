@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/data")
+@RequestMapping("devices/{deviceId}/data")
 public class DataResource
 {
 
     @Autowired
     private DataRepository repository;
 
-    @GetMapping("/{name}")
-    public ResponseEntity<List<SensorData>> byName(@PathVariable String name)
+    @GetMapping("{dataName}")
+    public ResponseEntity<List<SensorData>> byName(@PathVariable("deviceId") Long deviceId, @PathVariable("dataName") String dataName)
     {
-        return new ResponseEntity<List<SensorData>>(repository.findByName(name), HttpStatus.OK);
+        return new ResponseEntity<List<SensorData>>(repository.findByNameAndDevice_id(dataName, deviceId), HttpStatus.OK);
     }
 }

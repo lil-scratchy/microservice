@@ -39,7 +39,7 @@ public class DataResource
     @GetMapping("{dataName}")
     public ResponseEntity<List<SensorData>> byName(@PathVariable("deviceId") Long deviceId, @PathVariable("dataName") String dataName)
     {
-        return new ResponseEntity<List<SensorData>>(dataRepository.findByNameAndDevice_id(dataName, deviceId), HttpStatus.OK);
+        return new ResponseEntity<List<SensorData>>(dataRepository.findByNameAndDevice_idOrderByCreatedDesc(dataName, deviceId), HttpStatus.OK);
     }
 
     @PostMapping

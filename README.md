@@ -52,6 +52,11 @@ may return:
     }
 ]
 ```
+Get latest data of a device.
+
+```
+GET {apiUrl}/devices/{deviceId}/data/latest
+```
 #### Search
 Search data with query parameters.
 

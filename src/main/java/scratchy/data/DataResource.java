@@ -41,13 +41,19 @@ public class DataResource
     @GetMapping
     public ResponseEntity<List<SensorData>> search(@RequestParam MultiValueMap<String, String> queryParameters)
     {
-        return new ResponseEntity<List<SensorData>>(dataRepository.search(queryParameters), HttpStatus.OK);
+        return new ResponseEntity<>(dataRepository.search(queryParameters), HttpStatus.OK);
     }
 
     @GetMapping("{dataName}")
     public ResponseEntity<List<SensorData>> byName(@PathVariable("deviceId") Long deviceId, @PathVariable("dataName") String dataName)
     {
-        return new ResponseEntity<List<SensorData>>(dataRepository.findByNameAndDevice_idOrderByCreatedDesc(dataName, deviceId), HttpStatus.OK);
+        return new ResponseEntity<>(dataRepository.findByNameAndDevice_idOrderByCreatedDesc(dataName, deviceId), HttpStatus.OK);
+    }
+
+    @GetMapping("latest")
+    public ResponseEntity<List<SensorData>> latest(@PathVariable("deviceId") Long deviceId)
+    {
+        return new ResponseEntity<>(dataRepository.findLatest(deviceId), HttpStatus.OK);
     }
 
     @PostMapping

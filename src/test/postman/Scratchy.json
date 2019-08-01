@@ -170,7 +170,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"brightness\",\n\t\"value\": 21342821.0213\n}"
+					"raw": "{\n\t\"name\": \"co2\",\n\t\"value\": 21342821.0213\n}"
 				},
 				"url": {
 					"raw": "{{apiUrl}}devices/1/data",
@@ -202,14 +202,13 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{apiUrl}}devices/1/data/brightness/latest",
+					"raw": "{{apiUrl}}devices/1/data/latest",
 					"host": [
 						"{{apiUrl}}devices"
 					],
 					"path": [
 						"1",
 						"data",
-						"brightness",
 						"latest"
 					]
 				}
@@ -241,7 +240,7 @@
 	],
 	"variable": [
 		{
-			"id": "14afdf87-65dc-41a6-b629-4fcffd565ae3",
+			"id": "61bf7746-f9bc-4a20-a669-06e8c102cbca",
 			"key": "apiUrl",
 			"value": "http://localhost:8080/",
 			"type": "string"

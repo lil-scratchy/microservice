@@ -12,7 +12,9 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-import org.springframework.data.annotation.CreatedDate;
+import org.hibernate.annotations.CreationTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -36,9 +38,10 @@ public class SensorData
     @NotNull(message = "Data value cannot be null.")
     private Double value;
 
+    @JsonIgnore
     @ManyToOne(fetch = LAZY, optional = false)
     private Device device;
 
-    @CreatedDate
+    @CreationTimestamp
     private Date   created;
 }

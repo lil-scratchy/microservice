@@ -9,15 +9,3 @@ services:
     environment:
       MYSQL_DATABASE: scratchy
       MYSQL_ROOT_PASSWORD: lil_scratchy
-  rabbitmq:
-    container_name: scratchy-rabbitmq
-    build:
-      context: .
-      dockerfile: src/main/docker/rabbitmq
-    ports:
-    - 1883:1883
-    - 15672:15672
-    environment:
-      RABBITMQ_DEFAULT_USER: rabbitmq
-      RABBITMQ_DEFAULT_PASS: rabbitmq
-      RABBITMQ_ERLANG_COOKIE: tpMQGp7qpoI4xKAcaM38sQlibeIqB2pB

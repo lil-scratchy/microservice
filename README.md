@@ -52,6 +52,17 @@ may return:
     }
 ]
 ```
+Get latest data of a device.
+
+```
+GET {apiUrl}/devices/{deviceId}/data/latest
+```
+#### Search
+Search data with query parameters.
+
+```
+GET {apiUrl}/devices/{deviceId}/data?name=co2&pageSize=20&pageNumber=2
+```
 ### Device
 
 #### Create

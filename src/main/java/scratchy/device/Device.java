@@ -1,7 +1,7 @@
 package scratchy.device;
 
 import static javax.persistence.CascadeType.ALL;
-import static javax.persistence.FetchType.EAGER;
+import static javax.persistence.FetchType.LAZY;
 
 import java.util.List;
 
@@ -44,6 +44,6 @@ public class Device
     private Location         location;
 
     @JsonIgnore
-    @OneToMany(fetch = EAGER, orphanRemoval = true, cascade = ALL, mappedBy = SensorData.Fields.device)
+    @OneToMany(fetch = LAZY, orphanRemoval = true, cascade = ALL, mappedBy = SensorData.Fields.device)
     private List<SensorData> data;
 }

@@ -17,6 +17,8 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.NaturalId;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 import lombok.experimental.Accessors;
 import lombok.experimental.FieldNameConstants;
@@ -41,6 +43,7 @@ public class Device
     @NotNull(message = "Location has to be set.")
     private Location         location;
 
+    @JsonIgnore
     @OneToMany(fetch = EAGER, orphanRemoval = true, cascade = ALL, mappedBy = SensorData.Fields.device)
     private List<SensorData> data;
 }
